@@ -8,7 +8,7 @@
   <title>Vim.js - Web port of Vim</title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Source+Code+Pro'>
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Source+Code+Pro'>
   <link rel="stylesheet" href="vim.css">
 
 </head>
@@ -94,9 +94,18 @@
     };
 
     window.onerror = function (msg, url, line) {
-      if (msg = "Program terminated with exit(0)"){
-        alert('Win! You typed: ' + charTyped);
+      if (msg = "Program terminated with exit(0)") {
+        // alert('Win! You typed: ' + charTyped);
+        tweet(charTyped);
       }
+    }
+
+    function tweet(text) {
+
+      window.open(
+        "https://twitter.com/share?url=goo.gl/m7Jbca&text="+text+"&hashtags=ExitVim2Win"
+      );
+
     }
 
   </script>
