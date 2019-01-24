@@ -19,24 +19,26 @@
 
     <div class="jumbotron">
       <h1>Exit Vim to Win</h1>
-      <h2>Something about vim</h2>
-      <code>A link to somthing else <a href="https://twitter.com/iamdevloper/status/1041999624775626752">Tweet</a>!</code>
+      <h3>Exit the Vim instance below and tell the world about it</h2>
+      <code>Exiting vim is a known challenge for <a href="https://twitter.com/iamdevloper/status/1041999624775626752">junior developers</a>!</code>
     </div>
 
     <div id="vimjs-container" class="container">
       <canvas id="vimjs-canvas"></canvas>
+      
       <div style="text-align:center">
-        <h3>Text you see while loading <em>Color text</em></h3>
+        <h3>Launching Vim <em>Click it to start</em></h3>
         <div class="vimjs-loading-container">
           <div class="vimjs-loading"></div>
           <div id="vimjs-loading-text">loading...</div>
         </div>
       </div>
+
     </div>
     <br>
     <br>
     <div class="footer">
-      <p>© <a target="_blank" href="http://coolwanglu.github.io/">Vim.js by Lu Wang</a> 2013-2014</p>
+      <p>© Using <a target="_blank" href="http://coolwanglu.github.io/">Vim.js by Lu Wang</a> 2013-2014</p>
       <!--
         <p class="text-muted">Last updated: <span id="last-updated-time"></span></p>
         -->
@@ -97,6 +99,21 @@
       if (msg = "Program terminated with exit(0)") {
         // alert('Win! You typed: ' + charTyped);
         tweet(charTyped);
+        
+        var canvas = document.getElementById('vimjs-canvas');  
+        canvas.parentNode.removeChild(canvas);
+        
+        var container = document.getElementById('vimjs-container');
+        
+        var winMessage = document.createElement("h3");
+        winMessage.innerHTML = "Vim escaped successfuly. You Win!"
+        
+        var win = document.createElement("div");
+        win.setAttribute("style",'text-align: center');
+        win.appendChild(winMessage);
+        
+        container.appendChild(win);
+
       }
     }
 
