@@ -14,18 +14,21 @@
 </head>
 
 <body>
-
+  <a href="https://github.com/idoco/exit-vim-2-win">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"
+      alt="Fork me on GitHub">
+  </a>
   <div class="container">
 
     <div class="jumbotron">
       <h1>Exit Vim to Win</h1>
-      <h3>Exit the Vim instance below and tell the world about it</h2>
-      <code>Exiting vim is a known challenge for <a href="https://twitter.com/iamdevloper/status/1041999624775626752">junior developers</a>!</code>
+      <h3>Exit the Vim instance below and tweet about it</h2>
+        <code>Exiting vim is a known challenge for <a href="https://twitter.com/iamdevloper/status/1041999624775626752">junior developers</a>!</code>
     </div>
 
     <div id="vimjs-container" class="container">
       <canvas id="vimjs-canvas"></canvas>
-      
+
       <div style="text-align:center">
         <h3>Launching Vim <em>Click it to start</em></h3>
         <div class="vimjs-loading-container">
@@ -99,19 +102,19 @@
       if (msg = "Program terminated with exit(0)") {
         // alert('Win! You typed: ' + charTyped);
         tweet(charTyped);
-        
-        var canvas = document.getElementById('vimjs-canvas');  
+
+        var canvas = document.getElementById('vimjs-canvas');
         canvas.parentNode.removeChild(canvas);
-        
+
         var container = document.getElementById('vimjs-container');
-        
+
         var winMessage = document.createElement("h3");
         winMessage.innerHTML = "Vim escaped successfuly. You Win!"
-        
+
         var win = document.createElement("div");
-        win.setAttribute("style",'text-align: center');
+        win.setAttribute("style", 'text-align: center');
         win.appendChild(winMessage);
-        
+
         container.appendChild(win);
 
       }
@@ -120,7 +123,7 @@
     function tweet(text) {
 
       window.open(
-        "https://twitter.com/share?url=goo.gl/m7Jbca&text="+text+"&hashtags=ExitVim2Win"
+        "https://twitter.com/share?url=goo.gl/m7Jbca&text=" + text + "&hashtags=ExitVim2Win"
       );
 
     }
